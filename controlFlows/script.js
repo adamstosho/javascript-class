@@ -487,7 +487,10 @@ while (z < fruitss.length){
 // ============================..
 
 
-// FOR EACH
-let numberS = [1, 2, 3, 4, 5];
+// forEach 
+const students = ['Latty', 'Muba', 'Kb', 'Amosun'];
+students.forEach((student, i) => {
+  console.log(`index ${i}: ${student}`)
+})
 
 
