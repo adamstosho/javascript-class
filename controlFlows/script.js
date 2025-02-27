@@ -69,7 +69,7 @@ console.log(`You  got a discount of ${discount}`)
 
 let newAge = 18;
 let message = age >= 18 ? "You are an adult!" : "You are a minor"
-console.log(message);
+console.log(message); 
 
 let threshold = 40;
 threshold >= 40 ? console.log ("Marry") : console.log ("You are still a minor");
@@ -443,7 +443,7 @@ for(key in user){
   // console.log(`key: ${user [key]}`)
 }
 
-// Practical Applications of for...in Loops
+// Practical Applications of for...of Loops
 
 let colours = ["yellow", "blue", "green", "red"]
 
