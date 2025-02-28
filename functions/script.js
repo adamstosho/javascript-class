@@ -169,7 +169,7 @@ outterFunc()
 function outer(name) {
       
       function inner() {
-      console.log("Hello " + name); 
+      console.log(`Hello ${name}`); 
     }
     inner()
 }
@@ -178,4 +178,10 @@ outer("Adam")
 
 // BLOCK SCOPE
 
+console.log(`Ridwan \n Adam` )
+let data = null;
+console.log(data)
+
+let ab = Symbol("id");
+console.log(ab); // Symbol(id)
 
