@@ -20,16 +20,53 @@ function add (a, b){
 }
 console.log(add(1,2));
 // or
+
 function add (a, b){
   console.log(a + b);
-
 }
-add(1,2);
-add(3,10)
+add(1, 2);
+add(3, 10)
+
+
+// ----------------------------------
+
+// Default Parameters 
+
+// note that if you do not provide invocation value, it will display the deafult parameter
+
+function greet(name = "Guest") {
+  console.log("Hello, " + name + "!");
+}
+greet("Alex"); // Hello, Alex!
+greet();       // Hello, Guest!
+
 
 
 // --------------------------
 
+// more exmaples on function 
+function toCelsius(fahrenheit) {
+  return (fahrenheit - 32) * 5 / 9;
+}
+console.log(toCelsius(32)); 
+console.log(toCelsius(68)); 
+
+
+// functions used in summing an array 
+
+let nums = [1, 2, 3, 4];
+
+function sumArray(numbers) {
+  let total = 0;
+  for (let num of numbers) {
+      total += num;
+  }
+  return total;
+}
+
+console.log(sumArray(nums)); 
+
+// ----------------------------
 function jamb(age){
   if (age > 30){
     return "You are too old to register"

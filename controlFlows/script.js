@@ -494,3 +494,22 @@ students.forEach((student, i) => {
 })
 
 
+
+// extra class
+
+let purchasePrice =100
+let discounts;
+
+
+if (purchasePrice >= 300) {
+  discount = 10
+  console.log(`You have ${discount}% discount`)
+}else if (purchasePrice >= 200){
+  discount = 5
+  console.log(`You have ${discount}% discount`)
+}else if (purchasePrice >= 100){
+  discount = 2
+  console.log(`You have ${discount}% discount`)
+}else{
+  console.log("Koshi danu")
+}
