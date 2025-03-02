@@ -477,11 +477,13 @@ while (cookies > 0) {
 
 // ===================_______
 
-let fruitss = ["Apples", "Mangoes", "Oranges", "Watermelon"];
+let fruitss = ["Apples", "Mangoes", "Oranges", "Watermelon","Dates"];
 let z = 0;
 while (z < fruitss.length){
   console.log(fruitss[z]);
-  z++;
+  z+=3;  
+
+  // z = z+4
 }
 
 // ============================..
@@ -513,3 +515,4 @@ if (purchasePrice >= 300) {
 }else{
   console.log("Koshi danu")
 }
+
