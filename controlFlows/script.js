@@ -1,6 +1,6 @@
 console.log("hello world!");
 
-// Control Flows --> determines how programmes are executed basedo n conditions and iteration.
+// Control Flows --> determines how programmes are executed based on conditions and iteration.
 
 // conditionals --> if, else-if, else, ternary operator
 
@@ -16,6 +16,22 @@ if (age === 25) {
 } else{
   console.log("Age is 30")
 }
+
+
+let isLoggedInn = true;
+let userRole = "admin";
+
+if (!isLoggedInn) {
+    console.log("Please log in to continue.");
+} else if (userRole === "admin") {
+    console.log("Welcome, Admin! Access granted to dashboard.");
+} else if (userRole === "member") {
+    console.log("Welcome, Member! Enjoy your content.");
+} else {
+    console.log("Welcome, Guest! Limited access granted.");
+}
+
+
 
 
 // let isLoggedIn = true;
@@ -82,6 +98,9 @@ console.log(result);
 let temperature = 37;
 const statusTemp = temperature > 37 ? "Hot weather 🥵" : "Cold weather❄️"
 console.log(statusTemp);
+
+let temperatures = 25;
+console.log(temperatures > 20 ? "It’s warm!" : "It’s cool."); // "It’s warm!"
 
 // Ternary with expression
 let price = 100;
@@ -312,6 +331,11 @@ for (let i = 1; i <=12; i++){
   console.log(`${table} * ${i} = ${table * i}`)
 }
 
+let tables = 6;
+for (let i = 1; i <=12; i++){
+  console.log(`${tables * i}`)
+}
+
 let i, x = '';
 for (i = 0; i <=5; i++){
   console.log(x += i);
@@ -331,7 +355,7 @@ for (let i = 0; i < numbers.length; i++) {
 }
 console.log("Sum: " + sum); // Sum: 60\
 
-// searching with break
+// searching with break..............................
 let names = ["Alex", "Bella", "Charlie"];
 let target = "Bella";
 
@@ -344,23 +368,29 @@ for (let i = 0; i < names.length; i++) {
 // for identifying even numbers
 let numberss = [1, 2, 3, 4, 5];
 for (let i = 1; i < numberss.length; i++) {
-    if (numbers[i] % 2 !== 0) {
+    if (numberss[i] % 2 !== 0) {
         continue; // Skip odd numbers
     }
-    console.log(numbers[i]);
+    console.log(numberss[i]);
 }
 
 // for odd numbers
+let numbersss = [1, 2, 3, 4, 5];
+for (let i = 0; i < numbersss.length; i++) {
+    if (numbersss[i] % 2 === 0) {
+        continue; // Skip odd numbers
+    }
+    console.log(numbersss[i]);
+}
 
-
-// for another multiplication tables
+// for another multiplication tables (nested loops)****************
 for (let i = 1; i <= 3; i++) {
   for (let j = 1; j <= 3; j++) {
       console.log(i + " x " + j + " = " + (i * j));
   }
 }
 
-// for calculating intrrest per annum
+// for calculating intrest per annum
 let savings = 100;
 let rate = 0.05; // 5% interest
 for (let year = 1; year <= 3; year++) {
@@ -443,12 +473,134 @@ for(key in user){
   // console.log(`key: ${user [key]}`)
 }
 
+
+// for summing
+let scores = {
+  quiz1: 85,
+  quiz2: 90,
+  quiz3: 88
+};
+let total = 0;
+
+for (let quiz in scores) {
+  total += scores[quiz];
+}
+console.log("Total score: " + total); // Total score: 263
+
+// to print string only
+let data = {
+  name: "Bella",
+  age: 30,
+  active: true,
+  city: "London"
+};
+
+for (let key in data) {
+  if (typeof data[key] === "string") {
+      console.log(key + ": " + data[key]);
+  }
+}
+
+
+// for cloning an object
+let original = {
+  color: "blue",
+  size: "medium"
+};
+let copy = {};
+
+for (let key in original) {
+  copy[key] = original[key];
+}
+console.log(copy); // { color: "blue", size: "medium" }
+
+
+
+
 // Practical Applications of for...of Loops
 
 let colours = ["yellow", "blue", "green", "red"]
 
 for (let colour of colours){
   console.log("colour " + [colour])
+}
+
+
+// using for...of for greetings
+
+let friends = ["Alex", "Bella", "Charlie"];
+
+for (let friend of friends) {
+    console.log("Hi, " + friend + "!");
+}
+
+
+// for summing 
+let scoress = [85, 90, 88];
+let totals = 0;
+
+for (let score of scoress) {
+    total += score;
+}
+console.log("Total: " + total); // Total: 263
+
+
+
+let word = "cat";
+
+for (let letter of word) {
+    console.log(letter);
+}
+
+let numberr = [1, 2, 3, 4, 5];
+
+for (let num of numberr) {
+    if (num % 2 !== 0) {
+        continue; // Skip odds
+    }
+    console.log("Even: " + num);
+}
+
+// for searching 
+
+let itemz = ["pen", "book", "desk"];
+let targetz = "book";
+
+for (let item of itemz) {
+    if (item === targetz) {
+        console.log("Found: " + item);
+        break;
+    }
+}
+
+// for set
+let uniqueNumbers = new Set([1, 2, 2, 3, 3, 4]);
+
+for (let num of uniqueNumbers) {
+    console.log(num);
+}
+
+
+// Concatenation
+let words = ["I", "love", "to", "code"];
+let sentence = "";
+
+for (let word of words) {
+    sentence += word + " ";
+}
+console.log(sentence.trim()); // "I love to code"
+
+// for login (online users)
+let userz = [
+  { name: "Alex", loggedIn: true },
+  { name: "Bella", loggedIn: false },
+  { name: "Charlie", loggedIn: true }
+];
+
+for (let user of userz) {
+  if (user.loggedIn) {
+      console.log(user.name + " is online");
+  }
 }
 
 
@@ -466,6 +618,18 @@ while(w <= 7){
   console.log(w)
   w++
 }
+
+
+// 2.
+let n = 0;
+let k = 0;
+while (n < 3) {
+  n++;
+  k += n;
+  console.log(k, n)
+}
+
+
 
 // ===========================
 let cookies = 3;
@@ -495,7 +659,212 @@ students.forEach((student, i) => {
   console.log(`index ${i}: ${student}`)
 })
 
+// ---------------------------------
+let colors = ["red", "blue", "green"];
 
+colors.forEach(function(color) {
+    console.log("Color: " + color);
+});
+
+
+// --------------------------------
+let namez = ["Alex", "Bella", "Charlie"];
+
+namez.forEach(name => console.log("Hello, " + name + "!"));
+
+// ----------------------------------
+let tasks = ["Code", "Test", "Deploy"];
+
+tasks.forEach((task, index) => {
+    console.log(`${index + 1}. ${task}`);
+});
+
+// summing
+let numberzz = [10, 20, 30];
+let sumzz = 0;
+
+numberzz.forEach(num => {
+    sumzz += num;
+});
+console.log("Sum: " + sumzz); // Sum: 60
+
+// ------------------------------
+
+let values = [1, 2, 3];
+
+values.forEach((value, index, arr) => {
+    arr[index] = value * 2;
+});
+console.log(values); // [2, 4, 6]
+
+
+// using for DOM manipulation
+let divs = document.querySelectorAll("div"); // Pretend this grabs <div> tags
+divs = Array.from(divs); // Convert NodeList to array
+
+divs.forEach(div => {
+    div.style.color = "blue";
+});
+
+
+// -----------------------------
+let temperaturez = [35, 40, 32];
+
+temperaturez.forEach(temp => {
+    if (temp > 38) {
+        console.log("Warning: " + temp + "°C is too hot!");
+    }
+});
+
+
+// do while statement 
+
+// A do...while loop is a control structure that executes a block of code at least once, then keeps going as long as a condition is true. Unlike a while loop (which checks the condition first), do...while runs the code before asking, “Should I keep going?” It’s perfect when you need to guarantee at least one iteration—like trying something once before deciding to continue.
+
+// synthax
+// do {
+//   // Code to repeat
+// } while (condition);
+
+let counts = 1;
+
+do {
+    console.log("Count: " + counts);
+    counts++;
+} while (counts <= 3);
+// ------------------------
+let guess;
+let secret = "blue";
+
+do {
+    guess = "blue"; // Pretend this is user input
+    console.log("Guess my favorite color: " + guess);
+} while (guess !== secret);
+
+console.log("You got it!");
+
+
+// ---------------------
+
+let nums = 0;
+
+do {
+    nums++;
+    if (nums % 2 !== 0) {
+        continue; // Skip odds
+    }
+    console.log("Even: " + nums);
+} while (nums < 6);
+
+
+
+// using labelled statement
+outerLoop: for (let i = 1; i <= 3; i++) {
+  for (let j = 1; j <= 3; j++) {
+      if (i === 2 && j === 2) {
+          console.log("Breaking out of outer loop!");
+          break outerLoop; // Exits both loops
+      }
+      console.log(`i=${i}, j=${j}`);
+  }
+}
+
+// more on using break
+let abC = [1, 2, 3, 4, 5, 6]
+for (let i = 0; i < abC.length; i++) {
+  if (abC[i] === 1) {
+    break;
+  }
+}
+
+
+// let u = 0;
+// let v = 0;
+// labelCancelLoops: while (true) {
+//   console.log("Outer loops:", u);
+//   u += 1;
+//   v = 1;
+//   while (true) {
+//     console.log("Inner loops:", v);
+//     v += 1;
+//     if (v === 10 && u === 10) {
+//       break labelCancelLoops;
+//     } else if (v === 10) {
+//       break;
+//     }
+//   }
+// }
+
+// more on using continue statement
+// 1.
+for (let i = 1; i <= 10; i++) {
+  if (i % 2 === 0) {
+      continue; // Skips even numbers
+  }
+  console.log(i); // Only odd numbers are printed
+}
+
+// 2.
+let num = 0;
+while (num < 10) {
+    num++;
+    if (num === 5) {
+        continue; // Skip when num is 5
+    }
+    if (num === 6) {
+      continue; // Skip when num is also 6
+  }
+  if (num === 8) {
+    break; // stop when number is 8
+}
+    console.log(num);
+}
+
+// using continue with label
+let f = 0;
+let j = 10;
+checkFandJ: while (f < 4) {
+  console.log(f);
+  f += 1;
+  checkJ: while (j > 4) {
+    console.log(j);
+    j -= 1;
+    if (j % 2 === 0) {
+      continue checkJ;
+    }
+    console.log(j, "is odd.");
+  }
+  console.log("f =", f);
+  console.log("j =", j);
+}
+// ---------------------------------
+outerLoop: for (let i = 1; i <= 3; i++) {
+  for (let j = 1; j <= 3; j++) {
+      if (i === 2 && j === 2) {
+          console.log("Skipping iteration for i=2, j=2");
+          continue outerLoop; // Skips to the next i value
+      }
+      console.log(`i=${i}, j=${j}`);
+  }
+}
+// --------------------------------------
+
+
+
+
+const arr = [3, 5, 7];
+arr.foo = "hello";
+
+for (const i in arr) {
+  console.log(i);
+}
+// "0" "1" "2" "foo"
+
+for (const i of arr) {
+  console.log(i);
+}
+// Logs: 3 5 7
+// ---------------------------------
 
 // extra class
 
@@ -515,4 +884,19 @@ if (purchasePrice >= 300) {
 }else{
   console.log("Koshi danu")
 }
+
+
+
+// note that you can push like this
+
+let numberz = [1, 2, 3, 4, 5, 6];
+let evens = [];
+
+for (let i = 0; i < numberz.length; i++) {
+    if (numberz[i] % 2 !== 0) {
+        continue; // Skip odd numbers
+    }
+    evens.push(numberz[i]);
+}
+console.log("Even numbers: " + evens); // Even numbers: 2,4,6
 
