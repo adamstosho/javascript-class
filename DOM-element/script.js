@@ -66,7 +66,6 @@ container.style.color = "#d5d5d5"
 
 // ADDING AND REMOVING CLASSES
 h6.classList.add("subheader")
-
 par.classList.remove("body")
 
 const bodyElements = document.getElementsByClassName("body")
@@ -88,6 +87,7 @@ document.querySelector("button").addEventListener("click", function(){
     message.textContent = "Hello!"
   }
 })
+
 
 // mouse event
 document.getElementById("box").addEventListener("mouseover", function (){
@@ -121,4 +121,19 @@ newH1.textContent = "Bro"
 newH1.style.color = "white"
 box.appendChild(newH1)
 
-// console.log
+
+// for selecting and element nested inside different element or container
+// const paragraph = document.querySelector("div:last-of-type p");
+// console.log(paragraph);
+
+// const allDivs = document.getElementsByTagName("div");
+// const lastDiv = allDivs[allDivs.length - 1]; // Get the last div
+// const paragraphs = lastDiv.lastElementChild;  // Get the <p> inside
+// console.log(paragraph);
+
+// const allDivs = document.querySelectorAll("div");
+// const lastDiv = allDivs[allDivs.length - 1];
+// const paragraph = lastDiv.querySelector("p"); 
+// console.log(paragraph);
+
+

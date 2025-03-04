@@ -30,26 +30,25 @@ add(3, 10)
 
 // ----------------------------------
 
-// Default Parameters 
 
-// note that if you do not provide invocation value, it will display the deafult parameter
 
-function greet(name = "Guest") {
-  console.log("Hello, " + name + "!");
+// NO RETURN FUNCTION DISPLAY WHAT IS IN console.log
+
+function noReturn() {
+  console.log("Hi");
 }
-greet("Alex"); // Hello, Alex!
-greet();       // Hello, Guest!
+let value = noReturn(); // Hi
+console.log(value);     // undefined (no return value)
 
-
-
-// --------------------------
-
-// more exmaples on function 
+// converting temperature 
 function toCelsius(fahrenheit) {
   return (fahrenheit - 32) * 5 / 9;
 }
-console.log(toCelsius(32)); 
-console.log(toCelsius(68)); 
+console.log(toCelsius(32)); // 0
+console.log(toCelsius(68)); // 20
+
+
+// --------------------------
 
 
 // functions used in summing an array 
@@ -77,6 +76,77 @@ function jamb(age){
   }
 }
 console.log(jamb(12))
+
+
+// user login 
+function checkLogin(user) {
+  if (user.isLoggedIn) {
+      return "Welcome, " + user.name + "!";
+  } else {
+      return "Please log in.";
+  }
+}
+let user = { name: "Bella", isLoggedIn: true };
+console.log(checkLogin(user)); // Welcome, Bella!
+
+// Functions can take other functions as arguments:
+
+function repeat(action, times) {
+  for (let i = 0; i < times; i++) {
+      action();
+  }
+}
+function sayHi() {
+  console.log("Hi!");
+}
+repeat(sayHi, 3);
+// Hi!
+// Hi!
+// Hi!
+
+
+// illustration of argument functions
+function greet(name, time) {
+  console.log(`Good ${time}, ${name}!`);
+}
+greet("Alex", "morning"); // Good morning, Alex!
+greet("Bella", "evening"); // Good evening, Bella!
+
+// skipping argument
+function sayHi(name) {
+  console.log("Hi, " + name + "!");
+}
+sayHi("Charlie"); // Hi, Charlie!
+sayHi();          // Hi, undefined!
+
+// Default Parameters 
+
+// note that if you do not provide invocation value, it will display the defult parameter
+
+function greet(name = "Guest") {
+  console.log("Hello, " + name + "!");
+}
+greet("Alex"); // Hello, Alex!
+greet();       // Hello, Guest!
+
+
+// example of object argument (built in arguments)
+
+function showArgs() {
+  console.log(arguments);
+}
+showArgs(1, "hello", true);
+// Arguments(3) [1, "hello", true, ...]
+
+function addAll() {
+  let total = 0;
+  for (let i = 0; i < arguments.length; i++) {
+      total += arguments[i];
+  }
+  return total;
+}
+console.log(addAll(1, 2, 3, 4)); // 10
+
 
 
 // hoisting
