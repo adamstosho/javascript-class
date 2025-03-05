@@ -73,6 +73,8 @@ const popped = number.pop() //to save the removed elements
 console.log(popped);
 console.log(number);
 
+// pop cannot be used to remove more than one element 
+
 
 // 3. Unshift () - adds one or more elements to the start of an array 
 let numberz = [2, 3];
@@ -220,9 +222,18 @@ console.log(bln);
 // Array for Iteration (used to loop over arrays) - These methods process each item, often with a callback function.
 
 // 14. forEach() - runs a function or perform action for each item, but it doesnt return anything. This means tht it will do it there automatically.
+
+// the synthax is as follows
+// 1. array.forEach(function(item){
+
+// })
+
+// 2. array.forEach(item =>
+
+
 let colors = ["red", "blue", "green"];
 colors.forEach((color, index) => {
-    console.log(`${index + 1}. ${color}`);
+    console.log(`${index + 1}: ${color}`);
 });
 
 const namez = ["Abiola", "Abdul", "Dola"]
@@ -247,6 +258,38 @@ trans.forEach((tran) =>{
 })
 console.log(totalVal)
 
+
+// using it to modify an array 
+let scores = [10, 20, 30];
+scores.forEach(function(score, index, arr) {
+    arr[index] = score * 2;
+});
+console.log(scores); 
+
+// for each on array of objects
+let people = [
+  { name: "Alex", age: 25 },
+  { name: "Bella", age: 30 }
+];
+people.forEach(function(person) {
+  console.log(`${person.name} is ${person.age}`);
+});
+
+let students = [
+  { name: "Charlie", grade: "A" },
+  { name: "Dana", grade: "B" }
+];
+students.forEach(function(student) {
+  console.log(`${student.name} got a ${student.grade}`);
+});
+
+// using foresch to perform simple action on each element 
+let team = ["Tom", "Jerry", "Spike"];
+team.forEach(function(player) {
+    console.log(`Go, ${player}!`);
+});
+
+
 // other method of getting the above 
 // let totalVal = 0
 // const trans = [42, 45, 26, 4, 13, 16]
@@ -258,11 +301,22 @@ console.log(totalVal)
 
 namez.forEach((name) => console.log(`Congratulations ${name}, you will be representing the team in the UK next month`))
 
+// that that the name can  be named with anything 
+
 // using DOM 
 let lists = document.getElementById("colorList");
 colors.forEach(color => {
     list.innerHTML += `<li>${color}</li>`;
 });
+
+let foods = ["pizza", "burger", "salad"];
+let myList = document.getElementById("myList");
+
+foods.forEach(function(food) {
+    myList.innerHTML += `<li>${food}</li>`;
+});
+
+
 
 
 // 15. Map method - It is similar to forEach, it also accept up to 3 argument, it allocate memory in all data store and return values
@@ -275,8 +329,132 @@ const inventory = [
   {name: "Semo", price: 40000},
   {name: "Yam", price: 80000},
 ]
+
 const price = inventory.map((value) => {
   return value.price
-
+  
 })
 console.log(price)
+
+// USING OPTIONAL CHAIN OPERATOR
+const commodities = inventory.map((value) => value.name); 
+console.log(commodities)
+
+
+// ==========================
+const arr4 = [1, 2, 3, 4, 5, 6];
+const multVal = arr4.map((el) => el * 2);
+console.log(multVal);
+
+// ============================
+// conversion rate
+
+const priceInUSD = [200, 120, 360, 90];
+const xchangeRate = 1490;
+console.log(priceInUSD.map((usd) => usd * xchangeRate))
+
+// ===================================
+let numb = [1, 2, 3];
+let doubled = numb.map(function(num) {
+    return num * 2;
+});
+console.log(doubled);  //
+console.log(numb);  // 
+// map() method retain the original array unchanged
+
+let fruity = ["apple", "banana", "orange"];
+let upperFruits = fruity.map(function(fruit) {
+    return fruit.toUpperCase();
+});
+console.log(upperFruits); 
+
+
+let clr = ["red", "blue", "green"];
+let numberedColors = clr.map(function(color, index) {
+    return `${index + 1}. ${color}`;
+});
+console.log(numberedColors); 
+
+
+let numd = [1, 2, 3];
+let sameNums = numd.map(function(num) {
+    return num; // No change
+});
+console.log(sameNums); 
+
+
+// note that without return, map() is going to show undefined
+
+let scorez = [10, 20, 30];
+let doubledScores = scorez.map(score => score * 2);
+console.log(doubledScores); 
+
+// using with arrays of objects
+let persons = [
+  { name: "Alex", age: 25 },
+  { name: "Bella", age: 30 }
+];
+let person = persons.map(function(paddy) {
+  return paddy.name;
+});
+console.log(names); 
+
+
+// =====================
+let points = [5, 10, 15];
+let doublePoints = points.map(function(point) {
+    return point * 2;
+});
+console.log(doublePoints); 
+
+// using map to change words in the array 
+let animalz = ["cat", "dog", "bird"];
+let bigAnimals = animalz.map(function(animal) {
+    return `Big ${animal}`;
+});
+console.log(bigAnimals); 
+
+// using with DOM to build a list
+let foodz = ["pizza", "burger", "salad"];
+let myLizt = document.getElementById("myList");
+
+let listItems = foodz.map(function(food) {
+    return `<li>${food}</li>`;
+});
+myList.innerHTML = listItems.join("");
+
+
+// =======================
+const users = [
+  {name: "Kabeer", age: 30},
+  {name: "Dolapo", age: 30},
+  {name: "Muiz", age: 30},
+  {name: "Feranmi", age: 30}
+]
+console.log(users.map((value) => value.name));
+
+const products = [
+  {name: "laptop", price: 30},
+  {name: "desktop", price: 30},
+  {name: "mouse", price: 30},
+  {name: "keyboard", price: 30}
+]
+
+const productWithId = products.map((product, index) => ({
+  id: index + 1,
+  ...product
+}));
+console.log(productWithId)
+
+// note that in introducing another value to the Object, we need to use parentheses to wrap the curly braces holding the return
+
+// let onlyID = productWithId.map((new) => {
+//   new.id})
+
+const wholeNo = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const lessThanSix = wholeNo.map((less) => {
+  return less < 6 ? less : null;
+})
+
+console.log(lessThanSix);
