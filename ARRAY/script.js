@@ -436,8 +436,8 @@ console.log(users.map((value) => value.name));
 const products = [
   {name: "laptop", price: 30},
   {name: "desktop", price: 30},
-  {name: "mouse", price: 30},
-  {name: "keyboard", price: 30}
+  {name: "mouse", price: 30000},
+  {name: "keyboard", price: 3320}
 ]
 
 const productWithId = products.map((product, index) => ({
@@ -448,13 +448,71 @@ console.log(productWithId)
 
 // note that in introducing another value to the Object, we need to use parentheses to wrap the curly braces holding the return
 
-// let onlyID = productWithId.map((new) => {
-//   new.id})
+let idNo = productWithId.map((now) => {
+  return now.id
+})
+console.log(idNo);
 
 const wholeNo = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+num = 6;
 
 const lessThanSix = wholeNo.map((less) => {
   return less < 6 ? less : null;
 })
-
 console.log(lessThanSix);
+
+// const lessThanSix = wholeNo.map((less) => {
+//  if (less < 6){
+// return i
+// }
+// // })
+// console.log(lessThanSix);
+
+
+// 16. Filter()- create new array based on the set conditions. it will only print/show the ones that pass the condition.Array
+
+// synthax
+// let newArray = array.filter(function(item) {
+//   // Rule to check each item
+//   return trueOrFalse;
+// });
+
+// // or 
+
+// let newArrays = array.filter(item => trueOrFalse);
+
+
+let numba = [1, 2, 3, 4, 5];
+let bigNumbers = numba.filter(function(num) {
+    return num > 3;
+});
+console.log(bigNumbers); 
+console.log(numba);  
+
+
+const evenNumber = wholeNo.filter((i) => i % 2 === 0)
+console.log(evenNumber)
+
+const below = productWithId.filter((product) => product.price <=1000)
+console.log(below);
+
+// ==============================
+let longFruits = fruits.filter(function(fruit) {
+  return fruit.length > 5;
+});
+console.log(longFruits);
+
+// ==========================
+
+// filtering out string from the array elements
+let er = [1, 3, 7, "Adekola", true, "bola", "123", 90, 200];
+let ab = er.filter((i) => typeof i === "string");
+console.log(ab);
+
+
+// ===================================
+let lengtho = productWithId.filter((less) => less.name.length < 7)
+console.log(lengtho)
+
+
+
