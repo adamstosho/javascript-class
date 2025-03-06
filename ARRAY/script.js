@@ -434,10 +434,10 @@ const users = [
 console.log(users.map((value) => value.name));
 
 const products = [
-  {name: "laptop", price: 30},
-  {name: "desktop", price: 30},
-  {name: "mouse", price: 30000},
-  {name: "keyboard", price: 3320}
+  {name: "laptop", price: 300},
+  {name: "desktop", price: 950},
+  {name: "mouse", price: 1450},
+  {name: "keyboard", price: 1950}
 ]
 
 const productWithId = products.map((product, index) => ({
@@ -509,10 +509,133 @@ let er = [1, 3, 7, "Adekola", true, "bola", "123", 90, 200];
 let ab = er.filter((i) => typeof i === "string");
 console.log(ab);
 
+// ===============================
+let scorezz = [85, 90, 95];
+let highScores = scores.filter(function(score) {
+    return score >= 90;
+});
+console.log(highScores);
+
 
 // ===================================
+// using filter to find long or short words
 let lengtho = productWithId.filter((less) => less.name.length < 7)
 console.log(lengtho)
 
+// ---------------------------
+let wordy = ["cat", "dog", "elephant"];
+let longWords = wordy.filter(function(word) {
+    return word.length > 3;
+});
+console.log(longWords); 
+
+// =====================
+let summary = 0;
+let summing = productWithId.map((now) => {console.log(summary += now.price)}) 
+console.log(summary)
 
 
+// using it to keep even number
+let numy = [1, 2, 3, 4, 5];
+let evenNums = numy.filter(function(num) {
+    return num % 2 === 0;
+});
+console.log(evenNums);
+
+// DOM manipulation with filter
+let scoress = [85, 92, 78, 95];
+let highScoress = scoress.filter(function(score) {
+    return score >= 90;
+});
+let highScoresDiv = document.getElementById("highScores");
+highScoresDiv.textContent = `High scores: ${highScoress.join(", ")}`; // note that we first filtered before calling using DOM
+
+// used for picking items by position 
+let toys = ["ball", "doll", "car", "kite"];
+let laterToys = toys.filter(function(toy, index) {
+    return index < 2;
+});
+console.log(laterToys); 
+
+// ================
+let animalsz = ["cat", "dog", "bird"];
+let dogs = animalsz.filter(function(animal) {
+    return animal === "dog";
+});
+console.log(dogs);  
+console.log(animalsz); 
+
+// 17. reduce () - It loops over an array and combines everything into one result.
+
+// synthax
+// let result = array.reduce(function(accumulator, item) {
+//   // How to combine accumulator and item
+//   return newAccumulator;
+// }, startingValue);
+
+// function(accumulator, item): The rule for combining things.
+// accumulator: The running total or “mix so far” (starts with startingValue).
+// item: The current element in the array.
+// return: What the accumulator becomes after each step.
+// startingValue: Where to begin (optional, but recommended).
+// result: The final single value you get.
+
+// short synthax
+// let result = array.reduce((acc, item) => newAccumulator, startingValue);
+
+let numbi = [1, 2, 3, 4];
+let sum = numbi.reduce(function(total, num) {
+    return total + num;
+}, 0);
+console.log(sum); // 10
+
+// for joining words
+let worddy = ["I", "love", "to", "code"];
+let sentency = worddy.reduce(function(phrase, word) {
+    return phrase + " " + word;
+}, "");
+console.log(sentency); 
+
+let letterz = ["a", "b", "c"];
+let numbered = letterz.reduce(function(text, letter, index) {
+    return text + `${index + 1}. ${letter} `;
+}, "");
+console.log(numbered);
+
+
+let numu = [1, 2, 3];
+let total = numu.reduce(function(sum, num) {
+    return sum + num;
+}, 0);
+console.log(total); 
+
+// counting items with reduce ()
+
+let votes = ["yes", "no", "yes", "yes"];
+let voteCount = votes.reduce(function(counts, vote) {
+    if (vote === "yes") {
+        counts.yes += 1;
+    } else {
+        counts.no += 1;
+    }
+    return counts;
+}, { yes: 0, no: 0 });
+console.log(voteCount); 
+
+// using reduce to find the biggest number
+
+let digit = [10, 5, 15, 8];
+let biggest = digit.reduce(function(max, num) {
+    return num > max ? num : max;
+}, [0]);
+console.log(biggest);
+
+
+
+// using with DOM
+let prices = [5, 10, 15];
+let totalPrice = prices.reduce(function(sum, price) {
+    return sum + price;
+}, 0);
+let totalDiv = document.getElementById("total");
+totalDiv.textContent = `Total: $${totalPrice}`;
