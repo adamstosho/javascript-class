@@ -583,11 +583,19 @@ console.log(animalsz);
 // short synthax
 // let result = array.reduce((acc, item) => newAccumulator, startingValue);
 
+// application of reduce method
+// 1. sum of an array elements
+// 2. flatten an array
+// 3. occurrence of an element/item in an array
+// 4. find the maximum value
+// 5. find the maximum or biggest value 
+// 6. grouping data by a property
+
 let numbi = [1, 2, 3, 4];
 let sum = numbi.reduce(function(total, num) {
     return total + num;
 }, 0);
-console.log(sum); // 10
+console.log(sum); 
 
 // for joining words
 let worddy = ["I", "love", "to", "code"];
@@ -624,7 +632,7 @@ console.log(voteCount);
 
 // using reduce to find the biggest number
 
-let digit = [10, 5, 15, 8];
+let digit = [10, 5, 15, 8, 200];
 let biggest = digit.reduce(function(max, num) {
     return num > max ? num : max;
 }, [0]);
@@ -639,3 +647,90 @@ let totalPrice = prices.reduce(function(sum, price) {
 }, 0);
 let totalDiv = document.getElementById("total");
 totalDiv.textContent = `Total: $${totalPrice}`;
+
+// another synthax for reduce: Array.reduce(accumulator, currentValue, currentIndex, Array), initialValue)
+// more examples on the application of reduce
+// 1. sum of an array elements
+// 2. flatten an array
+// 3. occurrence of an element/item in an array
+// 4. find the maximum value
+// 5. find the maximum or biggest value 
+// 6. grouping data by a property
+
+
+// Example 1: sum of array elements
+const myNums = [1,2,3,4,5];
+const sums = myNums.reduce((acc, curr) => {return acc + curr},0)
+console.log(sums)
+
+// Example 2: Flatten an array - to convert nested array to single array...
+
+const nestedArray = [[1, 2], [3, 4], [4, 6]]
+
+const flattenedArray = nestedArray.reduce((acc, curr) => (acc.concat(curr)), []).reduce((acc,curr)=> {
+  if(!acc.includes(curr)){
+  acc.push(curr)
+  }
+  return acc;
+}, [])
+
+console.log(flattenedArray)
+
+// to remove duplicate from the result, u can use reduce, filter and also for each method
+
+const flatFilter = flattenedArray.filter((e, index, array) => array.indexOf(e) === index) 
+console.log(flatFilter)
+
+// ===========================================
+
+// chaining different 
+const namo = ["Dolu", "soliu", "Feranmi", "Abdullah"]
+const namy = namo.filter((nam) => {
+  if (nam.charAt(0) === nam.charAt(0).toLowerCase()) return nam
+}).map((element) => element + "s")
+namy.push("Idrees")
+console.log([namy]) 
+
+
+// for each vs map
+
+const userz = [{name: "Soliu", age: 15}, {name: "feranmi", age: 10}]
+
+// add 5 to each of the age
+userz.forEach((now) => {return `${now.age += 5}`})
+console.log(userz)
+
+// using map method for the above
+const userzz = [{name: "Soliu", age: 15}, {name: "feranmi", age: 10}]
+
+const usa = userzz.map((now, index) => ({id: index + 1, ...now, age: now.age+5, height: now.age +10}))
+console.log(userzz)
+console.log(usa)
+
+
+// another example with multiple nested arrays
+// const multiNested = [[1, 2] [[3, 4], [5, 6]], [7, 8]]
+// const flatMulti = multiNested.reduce((acc, curr, currIn, array) => {
+//   if (curr =)
+// })
+
+
+// 3. occurrence of an element/item in an array
+const fruitty = ["Orange", "Banana", "Banana", "Grape"]
+const fruitsCount = fruitty.reduce((acc, curr) => { acc[curr] = (acc[curr] || 0) + 1;
+
+  return acc
+}, [])
+console.log({fruitsCount} ) 
+
+
+
+// 4. find the maximum value
+
+const maxExample = [10, 30, 3, 100, 4]
+const max = maxExample.reduce((acc, curr) => curr > acc ? curr : acc, maxExample[0])
+
+console.log(max)
+
+// 5. find the maximum or biggest value 
+// 6. grouping data by a property

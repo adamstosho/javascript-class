@@ -1,0 +1,12 @@
+h1{
+  font-size: 15rem;
+  font-weight: bolder;
+  color: crimson;
+  background-color: skyblue;  
+  background: linear-gradient(lightgreen, grey);
+  padding: 5px;
+  border-radius: 25px;
+  font-family: cursive;
+  text-align: center;
+}
+
