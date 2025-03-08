@@ -291,4 +291,3 @@ console.log(data)
 
 let ab = Symbol("id");
 console.log(ab); // Symbol(id)
-
