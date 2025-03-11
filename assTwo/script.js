@@ -55,7 +55,7 @@ const login = (email, password) => {
   const user = loginCredentials.find(user => user.email === email && user.password === password);
   
   if (user) {
-    return alert(`Hi ${email}, you are now logged in!`);
+    return `Hi ${email}, you are now logged in!`;
   }
   else {
   return "Invalid email or password.";
@@ -66,8 +66,8 @@ const login = (email, password) => {
 form.addEventListener("submit", function (event) {
   event.preventDefault(); // Prevent form from refreshing the page
 
-  const email = emailInput.value;
-  const password = passwordInput.value;
+  const email = emailInput.value.trim();
+  const password = passwordInput.value.trim();
 
   const result = login(email, password);
 
