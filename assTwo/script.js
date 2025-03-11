@@ -1,14 +1,12 @@
 
-// Select the form and input elements correctly
 const container = document.querySelector("div");
 
-// Dynamically insert the login form into the container
 container.innerHTML = `
   <div id ="Container">
   <h1>Cohort-6 Platform</h1>
   <div id="formContainer">
     <h2>Login</h2>
-    <h3>Kindly input your details to login</h3>
+    <h3>Kindly input your details to login...</h3>
       <form id="loginForm">
         <input id="email" class="input" type="email" name="email" placeholder="Email" required>
         <input id="password" class="input" type="password" name="password" placeholder="Password" required>
@@ -55,7 +53,7 @@ const login = (email, password) => {
   const user = loginCredentials.find(user => user.email === email && user.password === password);
   
   if (user) {
-    return alert(`Hi ${email}, you are now logged in!`);
+    return `Hi ${email}, you are now logged in!`;
   }
   else {
   return "Invalid email or password.";
@@ -66,15 +64,17 @@ const login = (email, password) => {
 form.addEventListener("submit", function (event) {
   event.preventDefault(); // Prevent form from refreshing the page
 
-  const email = emailInput.value;
-  const password = passwordInput.value;
+  const email = emailInput.value.trim();
+  const password = passwordInput.value.trim();
+  // (.value )help gets the value entered in the email field.
 
-  const result = login(email, password);
+  const result = login(email, password); // Used to call the login function based on what is stored above.
 
   if (result.includes("logged in")) {
-    alert(result); // Show success message
-    errorMessage.textContent = ""; // Clear error message
+    alert(result); // this will display a popup with the success message.
+    errorMessage.textContent = ""; // clears any previous error messages
   } else {
-    errorMessage.textContent = result; // Show error message
+    errorMessage.textContent = result; // displays the error message below the login form.
+    
   }
 });

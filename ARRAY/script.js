@@ -721,7 +721,7 @@ const fruitsCount = fruitty.reduce((acc, curr) => { acc[curr] = (acc[curr] || 0)
 
   return acc
 }, [])
-console.log({fruitsCount} ) 
+console.log({fruitsCount}) 
 
 
 

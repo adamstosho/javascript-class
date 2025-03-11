@@ -199,9 +199,9 @@ console.log(player.team.Manager)
 // built-in method is a method that is already defined by the object - like when they give value a function in the object
 
 const myObject = {
-  myMethod:  () => {},  //arrow function
-  myMethod2: function () {}, //function declaration
-  myMethod3() {}  //function expression
+  myMethod: () => { },  //arrow function
+  myMethod2: function () { }, //function declaration
+  myMethod3() { }  //function expression
 }
 
 // console.log(myObject.myMethod())
@@ -261,10 +261,10 @@ const employeeIn = Object.entries(employees)
 console.log(employeeIn)
 
 const session = {
-    id: 1,
-    date: "10-03-2025",
-    device: "mobile",
-    browser: "chrome",
+  id: 1,
+  date: "10-03-2025",
+  device: "mobile",
+  browser: "chrome",
 
 }
 const sessionValue = Object.entries(session)

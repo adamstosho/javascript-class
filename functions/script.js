@@ -72,13 +72,14 @@ function jamb(age){
   } else if (age < 30 && age > 18){
     return "You are qualified"
   } else {
-    return "Too young to register"
+    return "Too are young to register"
   }
 }
 console.log(jamb(12))
 
 
-// user login 
+// user login
+let user = { name: "Bella", isLoggedIn: false };  
 function checkLogin(user) {
   if (user.isLoggedIn) {
       return "Welcome, " + user.name + "!";
@@ -86,7 +87,7 @@ function checkLogin(user) {
       return "Please log in.";
   }
 }
-let user = { name: "Bella", isLoggedIn: true };
+
 console.log(checkLogin(user)); // Welcome, Bella!
 
 // Functions can take other functions as arguments:
@@ -291,3 +292,7 @@ console.log(data)
 
 let ab = Symbol("id");
 console.log(ab); // Symbol(id)
+
+
+// console.log(("1") + ("1"))
+

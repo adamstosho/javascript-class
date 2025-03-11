@@ -15,13 +15,13 @@ let b = 3;
 let c = 4;
 let d;
 
-d = b;
-c = d;
+d = c;
+c = b;
 b = c;
 
 
-// console.log(`b: ${b}, c: ${c}`)
-// console.log({b, c})
+console.log(`b: ${b}, c: ${c}`)
+console.log({b, c})
 
 console.log(c);
 console.log(b);
