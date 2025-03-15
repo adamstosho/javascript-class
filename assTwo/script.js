@@ -6,7 +6,7 @@ container.innerHTML = `
   <h1>Cohort-6 Platform</h1>
   <div id="formContainer">
     <h2>Login</h2>
-    <h3>Kindly input your details to login</h3>
+    <h3>Kindly input your details to login...</h3>
       <form id="loginForm">
         <input id="email" class="input" type="email" name="email" placeholder="Email" required>
         <input id="password" class="input" type="password" name="password" placeholder="Password" required>
@@ -75,5 +75,6 @@ form.addEventListener("submit", function (event) {
     errorMessage.textContent = ""; // clears any previous error messages
   } else {
     errorMessage.textContent = result; // displays the error message below the login form.
+    
   }
 });

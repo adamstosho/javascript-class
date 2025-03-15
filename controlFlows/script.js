@@ -175,7 +175,7 @@ switch (loginStatus) {
 // using switch with numbers
 let score = 85;
 
-switch (true) {
+switch (score) {
     case score >= 90:
         console.log("A");
         break;
@@ -341,7 +341,7 @@ for (i = 0; i <=5; i++){
   console.log(x += i);
 }
 
-// Example: Shopiing Lists
+// Example: Shopping Lists
 let items = ["milk", "bread", "eggs"];
 for (let i = 0; i < items.length; i++) {
     console.log("Buy: " + items[i]);
@@ -353,7 +353,7 @@ let sum = 0;
 for (let i = 0; i < numbers.length; i++) {
     sum += numbers[i];
 }
-console.log("Sum: " + sum); // Sum: 60\
+console.log("Sum: " + sum); // Sum: 60
 
 // searching with break..............................
 let names = ["Alex", "Bella", "Charlie"];
@@ -419,7 +419,7 @@ for (let i = 0; i < users.length; i++) {
   }
 }
 
-// what can crash the code in for loop is forgetting to update the counter (e.g.  no i++) crashes ur code
+// What can crash the code in for loop is forgetting to update the counter (e.g.  no i++) crashes ur code
 
 // Another examples
 // FOR ODD NUMBERS
@@ -468,8 +468,8 @@ while (count <= 3) {
 // examples 1
 
 let user = {name: "Latty", age: 27, city: "Ilorin"};
-for(key in user){
-  console.log(key + ": " + user[key])
+for(a in user){
+  console.log(a + ": " + user[a])
   // console.log(`key: ${user [key]}`)
 }
 
@@ -854,6 +854,7 @@ outerLoop: for (let i = 1; i <= 3; i++) {
 
 const arr = [3, 5, 7];
 arr.foo = "hello";
+arr[3] = "jamb"
 
 for (const i in arr) {
   console.log(i);
@@ -896,7 +897,7 @@ for (let i = 0; i < numberz.length; i++) {
     if (numberz[i] % 2 !== 0) {
         continue; // Skip odd numbers
     }
-    evens.push(numberz[i]);
+    //evens.push(numberz[i]);
 }
 console.log("Even numbers: " + evens); // Even numbers: 2,4,6
 

@@ -64,6 +64,7 @@ container.innerHTML =  `
 container.style.backgroundColor = "black"
 container.style.color = "#d5d5d5"
 
+
 // ADDING AND REMOVING CLASSES
 h6.classList.add("subheader")
 par.classList.remove("body")
@@ -109,6 +110,7 @@ function greet(name){
   alert("Hello, " + name + "!")
 }
 document.getElementById("greetBtn").addEventListener("click", () => greet("Ridwan"))
+
 
 // to create new element and push it
 const newBox = document.createElement("div")
