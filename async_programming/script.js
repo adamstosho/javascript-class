@@ -469,3 +469,17 @@ const getUserAndTask = async (userID) => {
 
 
 getUserAndTask("4")
+
+
+// GET API - fetching data from websites
+
+
+async function getUsers() {
+  let response = await fetch("https://jsonplaceholder.typicode.com/users");
+  let users = await response.json(); // Convert response to JSON
+  console.log(users);
+}
+
+getUsers();
+
+

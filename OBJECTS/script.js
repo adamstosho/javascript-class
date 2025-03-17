@@ -156,6 +156,14 @@ book.pages = 500; // Modify an existing property
 console.log(book.pages); // 500
 console.log(book)
 
+// adding a method later
+book.describe = function() {
+  console.log(`"${this.title}" has ${this.pages} pages.`);
+};
+
+book.describe(); 
+
+
 // kindly note that the we modify the same way we add...
 
 // delete a property  
@@ -171,7 +179,7 @@ book.describe = function () {
 book.pages = 400;
 console.log(book.describe());
 
-
+// ========================================
 let player = {
   firstName: "Ronaldo",
   lastName: "Christiano",
@@ -195,6 +203,20 @@ console.log(player.team)
 
 player.team.Manager = "Ole Gunnar Solskjaer"
 console.log(player.team.Manager)
+
+// looping through
+console.log(`you can loop through the object using for...in`)
+
+let phone = {
+  brand: "Apple",
+  model: "iPhone 14",
+  price: 999
+};
+
+for (let key in phone) {
+  console.log(`${key}: ${phone[key]}`);
+}
+
 
 // built-in method is a method that is already defined by the object - like when they give value a function in the object
 
@@ -250,11 +272,42 @@ const employees = {
   sales: "Damilare"
 }
 
-const employeeInfo = Object.keys(employees)
+const employeeInfo = Object.keys(employees) //note that we are declaring variables for each of the functions
 console.log(employeeInfo)
 
 const employeeInf = Object.values(employees)
 console.log(employeeInf)
+
+// kindly note this exmaples for shopping cart
+let cart = {
+  items: ["shirt", "shoes"],
+  total: 50,
+  addItem: function(item, price) {
+    this.items.push(item);
+    this.total += price;
+  }
+};
+
+cart.addItem("hat", 20);
+console.log(cart.items); 
+console.log(cart.total);
+
+// study this very well for more functions examples in objects
+let players = {
+  name: "Hero",
+  health: 100,
+  attack: function() {
+    console.log(`${this.name} attacks with power!`);
+  },
+  takeDamage: function(amount) {
+    this.health -= amount;
+    console.log(`${this.name} has ${this.health} health left.`);
+  }
+};
+
+players.attack();        
+players.takeDamage(30);  
+
 
 // entries create a nested array of the key-value pairs of the object
 const employeeIn = Object.entries(employees)
