@@ -1,0 +1,33 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 50px;
+}
+input {
+  padding: 10px;
+  width: 250px;
+  margin-right: 10px;
+}
+button {
+  padding: 10px;
+  cursor: pointer;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  background: #f4f4f4;
+  padding: 10px;
+  margin: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.delete {
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
