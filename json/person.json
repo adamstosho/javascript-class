@@ -1,0 +1,11 @@
+{
+  "name": "Ajayi Lateefat Omowonuola Olubisi Alake",
+  "age": 18,
+  "hobbies": ["researching", "traveling", "networking"],
+  "address": {
+    "number": "No 67",
+    "street": "Old Yidi Road, Ita-Amodu",
+    "city": "Ilorin"
+  }
+  
+}

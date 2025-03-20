@@ -225,7 +225,7 @@ const copiedObject = { ...originalObject };
 
 // note that, before you spread, what you are spreading must be defined
 
-
+    
 // Destructuring 
 
 let person = {name: "Alhaji Agba", age: 25, status: "Dead"}
