@@ -26,7 +26,40 @@ sessionStorage.removeItem('tempData');
 // Clear all data
 sessionStorage.clear();
 
+// iteration 
+for (let i = 0; i < localStorage.length; i++) {
+  const key = localStorage.key(i);
+  const value = localStorage.getItem(key);
+  console.log(`${key}: ${value}`);
+}
 
+
+// to handle storage limits
+try {
+  localStorage.setItem('test', 'test');
+  localStorage.removeItem('test');
+} catch (e) {
+  if (e.name === 'QuotaExceededError') {
+    console.log('Storage is full');
+  }
+}
+
+
+// for checking support
+if (typeof Storage !== 'undefined') {
+  // Web Storage is supported
+} else {
+  // Fallback to cookies or other methods
+}
+
+
+
+// storage event functions
+window.addEventListener('storage', function(event) {
+  if (event.key === 'username') {
+    console.log('Username updated:', event.newValue);
+  }
+});  //note that the stoarge event is not fired for sessionStorage bcos it is in a single tab.
 
 // ============================================
 //setItem()
@@ -41,8 +74,8 @@ sessionStorage.setItem("age", 27)
 let demo = document.getElementById("demo").innerHTML = sessionStorage.getItem("age")
 console.log(demo)
 
-localStorage.setItem("input", "Description")
-let description = document.getElementById("description").innerHTML = localStorage("input")
+localStorage.setItem("input", "description")
+let description = document.getElementById("description").innerHTML = localStorage.getItem("input")
 console.log(description)
 
 

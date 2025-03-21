@@ -91,7 +91,7 @@ console.log(callMe)
 const sholaHobby = dltAfrica[0].cohorts.cohort1.hobbies.Shola
 console.log({ sholaHobby })
 
-//  dynamic rending 
+//  dynamic rending ------------------------
 const studentAndTutors = { [dltAfrica[1].tutors.names[0]]: dltAfrica[0].cohorts.cohort1.names[2] }
 console.log(studentAndTutors)
 
@@ -218,6 +218,69 @@ for (let key in phone) {
 }
 
 
+// shopping Cart
+let carts = {
+  items: ["shirt", "shoes"],
+  total: 50,
+  addItem: function(item, price) {
+    this.items.push(item);
+    this.total += price;
+  }
+};
+
+carts.addItem("hat", 20);
+console.log(carts.items); 
+console.log(carts.total); 
+
+
+// game charracter 
+let player = {
+  name: "Hero",
+  health: 100,
+  attack: function() {
+    console.log(`${this.name} attacks with power!`);
+  },
+  takeDamage: function(amount) {
+    this.health -= amount;
+    console.log(`${this.name} has ${this.health} health left.`);
+  }
+};
+
+player.attack();      
+player.takeDamage(30); 
+
+// A recipe
+
+let recipe = {
+  name: "Pancakes",
+  ingredients: ["flour", "milk", "eggs"],
+  servings: 4,
+  steps: {
+    step1: "Mix ingredients",
+    step2: "Cook on pan"
+  },
+  printRecipe: function() {
+    console.log(`Recipe for ${this.name}:`);
+    console.log(`Ingredients: ${this.ingredients.join(", ")}`); //note that we used this join to join the element of that array into one
+    console.log(`Servings: ${this.servings}`);
+  }
+};
+
+recipe.printRecipe();
+
+
+// COPYING OBJECTS
+// Using = may not be really appropriate bcos it’s like sharing the same box—changes affect both. to make a real copy, use Object.assign or spread operator
+let box1 = { color: "blue" };
+let box2 = box1; 
+box2.color = "green";
+console.log(box1.color); // "green" (changed too!)
+
+let box3 = { color: "blue" };
+let box4 = { ...box3 }; // New copy
+box4.color = "red";
+console.log(box3.color); // "blue" (unchanged)
+
 // built-in method is a method that is already defined by the object - like when they give value a function in the object
 
 const myObject = {
@@ -236,6 +299,9 @@ const dog = {
   }
 }
 dog.bark();
+
+
+
 
 
 // Object Methods
